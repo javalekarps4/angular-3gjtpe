@@ -8,10 +8,11 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import{ReactiveFormsModule}from'@angular/forms'
 import{AppRouterModule}from './AppRoterModule';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule,AppRouterModule ],
+  imports:      [ BrowserModule, FormsModule,AppRouterModule,ReactiveFormsModule ],
   declarations: [ AppComponent, HelloComponent, LoginComponent, RegisterComponent, PagenotfoundComponent, WelcomeComponent ],
   bootstrap:    [ AppComponent ]
 })
