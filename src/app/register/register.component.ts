@@ -7,7 +7,7 @@ import{FormGroup}from'@angular/forms';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  RegistrationForm:FormGroup=new
+  //RegistrationForm=new FormGroup();
 
   constructor() { }
 
