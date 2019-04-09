@@ -1,17 +1,18 @@
 <div class="span3 well">
       <legend>New to WebApp? Sign up!</legend>
-    <form accept-charset="UTF-8" action="" method="post">
+      {{RegistrationForm.value|json}}
+    <form [formGroup]="RegistrationForm">
       <div class="formgroup">
         <label for="fullname">full name</label>
-        	<input class="span3 form-control" id="fullname" name="name"  type="text">
+        	<input formControlName="fullname" class="span3 form-control" id="fullname" name="name"  type="text">
       </div>
       <div class="formgroup">
         <label for="username">User name</label>
-         <input class="span3 form-control" id="username" name="username"  type="text">
+         <input class="span3 form-control" formControlName="username" id="username" name="username"  type="text">
       </div>
       <div class="formgroup">
         <label for="password">Password</label>
-          <input class="span3 form-control" id="password" name="password" type="password"> 
+          <input class="span3 form-control" formControlName="password" id="password" name="password" type="password"> 
       </div>
 	
        
