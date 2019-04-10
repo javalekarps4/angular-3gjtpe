@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import{FormBuilder,Validators}from'@angular/forms';
-
+import{forbiddenNameValidator}from'../shared/customvalidators';
 
 @Component({
   selector: 'app-register',
@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
   constructor(private fb:FormBuilder) { }
     RegistrationForm=this.fb.group({
       fullname:['',Validators.required],
-      username:['',Validators.required],
+      username:['',Validators.required,forbiddenNameValidator],
       password:['',Validators.required]
     })
   ngOnInit() {
