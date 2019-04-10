@@ -13,8 +13,12 @@ export class RegisterComponent implements OnInit {
   //   password:new FormControl('')
   // });
 
-  constructor(private fb:FormBuilder,private _validators:Validators) { }
-    RegistrationForm=this.fb.group
+  constructor(private fb:FormBuilder) { }
+    RegistrationForm=this.fb.group({
+      fullname:['',Validators.required],
+      username:[''],
+      password:['']
+    })
   ngOnInit() {
   }
 
