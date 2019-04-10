@@ -6,15 +6,23 @@
         <label for="fullname">full name</label>
         	<input [class.is-invalid]="fullnameValidation()" formControlName="fullname" class="span3 form-control" id="fullname" name="name"  type="text" >
           
-         
+         <div [hidden]="!fullnameValidation()">
+           <small class="danger">enter full name</small>
+         </div>
       </div>
       <div class="formgroup">
         <label for="username">User name</label>
          <input class="span3 form-control" [class.is-invalid]="usernameValidation()"formControlName="username" id="username" name="username"  type="text">
+          <div [hidden]="!usernameValidation()">
+           <small class="danger">enter user name</small>
+         </div>
       </div>
       <div class="formgroup">
         <label for="password">Password</label>
           <input class="span3 form-control" formControlName="password" id="password" name="password" type="password" [class.is-invalid]="passwordValidation()"> 
+           <div [hidden]="!passwordValidation()">
+           <small class="danger">enter password</small>
+         </div>
       </div>
 	
        
