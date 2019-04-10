@@ -1,23 +1,23 @@
 <div class="span3 well">
       <legend>New to WebApp? Sign up!</legend>
-      {{RegistrationForm.value|json}}
+      <!-- {{RegistrationForm.value|json}} -->
     <form [formGroup]="RegistrationForm">
       <div class="formgroup">
         <label for="fullname">full name</label>
-        	<input [class.is-invalid]="RegistrationForm.get('fullname').invalid && (RegistrationForm.get('fullname').touched||RegistrationForm.get('fullname').dirty)" formControlName="fullname" class="span3 form-control" id="fullname" name="name"  type="text" >
+        	<input [class.is-invalid]="fullnameValidation()" formControlName="fullname" class="span3 form-control" id="fullname" name="name"  type="text" >
           
          
       </div>
       <div class="formgroup">
         <label for="username">User name</label>
-         <input class="span3 form-control" [class.is-invalid]="(RegistrationForm.get('username').touched) && RegistrationForm.get('username').invalid"formControlName="username" id="username" name="username"  type="text">
+         <input class="span3 form-control" [class.is-invalid]="usernameValidation()"formControlName="username" id="username" name="username"  type="text">
       </div>
       <div class="formgroup">
         <label for="password">Password</label>
-          <input class="span3 form-control" formControlName="password" id="password" name="password" type="password" [class.is-invalid]="RegistrationForm.get('password').invalid && RegistrationForm.get('password').touched"> 
+          <input class="span3 form-control" formControlName="password" id="password" name="password" type="password" [class.is-invalid]="passwordValidation()"> 
       </div>
 	
        
-        <button class="btn btn-warning" id="submit" type="submit">Sign up for WebApp</button>
+        <button class="btn btn-warning" id="submit" type="submit"(click)="onSubmit()">Sign up for WebApp</button>
     </form>
 </div>

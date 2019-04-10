@@ -21,6 +21,33 @@ export class RegisterComponent implements OnInit {
     })
   ngOnInit() {
   }
+  fullnameValidation()
+  {
+    if(this.RegistrationForm.get('fullname').invalid&&(this.RegistrationForm.get('fullname').touched||this.RegistrationForm.get('fullname').dirty))
+    {
+         return true;
+    }
+    else
+    return false;
+  }
+  usernameValidation()
+  {
+    if(this.RegistrationForm.get('username').invalid&&(this.RegistrationForm.get('username').touched||this.RegistrationForm.get('username').dirty))
+    {
+         return true;
+    }
+    else
+    return false;
+  }
+  passwordValidation()
+  {
+    if(this.RegistrationForm.get('password').invalid&&(this.RegistrationForm.get('password').touched||this.RegistrationForm.get('password').dirty))
+    {
+         return true;
+    }
+    else
+    return false;
+  }
   onSubmit()
   {
     console.log(JSON.stringify(this.RegistrationForm.value));
