@@ -24,6 +24,7 @@ export class RegisterComponent implements OnInit {
   }
   fullnameValidation()
   {
+    
     if(this.RegistrationForm.get('fullname').invalid&&(this.RegistrationForm.get('fullname').touched||this.RegistrationForm.get('fullname').dirty))
     {
          return true;
