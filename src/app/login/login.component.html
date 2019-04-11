@@ -13,10 +13,10 @@
                               <label for="exampleInputEmail1">Email address</label>
 
                               <input type="email" name="email"  class="form-control" id="email" formControlName="email"  placeholder="Enter email"[class.is-invalid]="emailValidation()" >
-                              <!-- <div [hidden]="emailValidation()">
-                              <small class="danger" *ngIf="LoginForm.get('email').errors?.required">please enter email</small>
-                              <small class="danger" *ngIf="email.errors.email">please enter valid email</small>
-                           </div>  -->
+                          <div [hidden]="!emailValidation()">
+                              <small class="danger" *ngIf="LoginForm.get('email').errors?.required" >please enter email</small>
+                                  <small class="danger" *ngIf="LoginForm.get('password').errors?.email">please enter valid email</small>
+                           </div>  
                            </div>
                             
                            
