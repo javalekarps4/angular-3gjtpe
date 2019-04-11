@@ -11,8 +11,14 @@
                    <form action="" method="post" name="login">
                            <div class="form-group">
                               <label for="exampleInputEmail1">Email address</label>
-                              <input type="email" name="email"  class="form-control" id="email"  placeholder="Enter email"[class.is-danger]="email.errors?.required">
+                              <input type="email" name="email"  class="form-control" id="email"  placeholder="Enter email"[class.is-invalid]="email.errors?.required">
+                              <div [hidden]="emailValidation()">
+                              <small class="danger" *ngIf="LoginForm.get('email').errors?.required">please enter email</small>
+                              <small class="danger" *ngIf="email.errors.email">please enter valid email</small>
                            </div>
+                           </div>
+                            
+                           
                            <div class="form-group">
                               <label for="exampleInputEmail1">Password</label>
                               <input type="password" name="password" id="password"  class="form-control"  placeholder="Enter Password">

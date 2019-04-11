@@ -18,11 +18,27 @@ LoginForm=this._formbuilder.group({
 })
 email()
 {
-  this.LoginForm.get('email');
+  return this.LoginForm.get('email');
 }
 password()
 {
-  this.LoginForm.get('password');
+return  this.LoginForm.get('password');
+}
+emailValidation()
+{
+  if(this.LoginForm.get('email').invalid||this.LoginForm.get('email').dirty)
+  {
+    return true;
+  }
+  return false;
+}
+passwordValidation()
+{
+  if(this.LoginForm.get('password').invalid||this.LoginForm.get('password').dirty)
+  {
+    return true;
+  }
+  return false;
 }
 onLogin()
 {
