@@ -47,9 +47,25 @@ export class RegisterComponent implements OnInit {
     {
          return true;
     }
+    
     else
     return false;
   }
+
+   fullname()
+   {
+    return this.RegistrationForm.get('fullname');
+   }
+   username()
+   {
+    return this.RegistrationForm.get('username');
+   }
+   password()
+   {
+    return this.RegistrationForm.get('password');
+   }
+
+
   onSubmit()
   {
     console.log(JSON.stringify(this.RegistrationForm.value));

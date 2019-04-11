@@ -7,16 +7,16 @@
         	<input [class.is-invalid]="fullnameValidation()" formControlName="fullname" class="span3 form-control" id="fullname" name="name"  type="text" >
           
          <div [hidden]="!fullnameValidation()">
-           <small class="danger" *ngIf="RegistrationForm.get('fullname').errors?.required">enter full name</small>
+           <small class="danger" *ngIf="fullname.errors?.required">enter full name</small>
             
          </div>
       </div>
       <div class="formgroup">
         <label for="username">User name</label>
-         <input class="span3 form-control" [class.is-invalid]="usernameValidation()"formControlName="username" id="username" name="username"  type="text">
+         <input class="span3 form-control" [class.is-invalid]="usernameValidation()"formControlName="username" id="username" name="username"  type="text" minLength="8">
           <div [hidden]="!usernameValidation()">
-           <small class="danger"  *ngIf="RegistrationForm.get('username').errors?.required">enter user name</small>
-           <small class="danger" *ngIf="RegistrationForm.get('username').errors?.forbiddenNameValidator">{{RegistrationForm.get('fullname').value}} is not allow</small> 
+           <small class="danger"  *ngIf="username.errors?.required">enter user name</small>
+           <small class="danger" *ngIf="username.errors?.forbiddenName">It is not allow</small> 
          </div>
       </div>
       <div class="formgroup">
@@ -24,11 +24,11 @@
           <input class="span3 form-control" formControlName="password" id="password" name="password" type="password" [class.is-invalid]="passwordValidation()"> 
            <div [hidden]="!passwordValidation()">
            <small class="danger" *ngIf="RegistrationForm.get('password').errors?.required">enter password</small>
-           <small class="danger" *ngIf="RegistrationForm.get('password').hasError('minLength')">Minimum password length must be 8</small>
+           <small class="danger" *ngIf="RegistrationForm.get('password').errors?.minlength">Minimum password length must be 8</small>
          </div>
       </div>
 	
        
-        <button class="btn btn-warning" id="submit" type="submit"(click)="onSubmit()">Sign up for WebApp</button>
+        <button class="btn btn-warning" id="submit" type="submit"(ngSubmit)="onSubmit()">Sign up for WebApp</button>
     </form>
 </div>
