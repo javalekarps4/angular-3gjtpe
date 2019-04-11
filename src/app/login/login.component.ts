@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 LoginForm=this._formbuilder.group({
-  email:['',[Validators.required]],
+  email:['',[Validators.required,Validators.email]],
   password:['',[Validators.required,Validators.maxLength(8)]]
 })
 email()
@@ -35,7 +35,7 @@ emailValidation()
 }
 passwordValidation()
 {
-  if(this.LoginForm.get('password').invalid||this.LoginForm.get('password').dirty)
+  if(this.LoginForm.get('password').invalid&&(this.LoginForm.get('password').dirty||this.LoginForm.get('password').touched))
   {
     return true;
   }

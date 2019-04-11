@@ -8,21 +8,21 @@
 							<h1>Login</h1>
 						 </div>
 					</div>
-                   <form action="" method="post" name="login">
+                   <form [formGroup]="LoginForm">
                            <div class="form-group">
                               <label for="exampleInputEmail1">Email address</label>
 
-                              <input type="email" name="email"  class="form-control" id="email"  placeholder="Enter email"[class.is-invalid]="emailValidation()" >
+                              <input type="email" name="email"  class="form-control" id="email" formControlName="email"  placeholder="Enter email"[class.is-invalid]="emailValidation()" >
                               <!-- <div [hidden]="emailValidation()">
                               <small class="danger" *ngIf="LoginForm.get('email').errors?.required">please enter email</small>
                               <small class="danger" *ngIf="email.errors.email">please enter valid email</small>
-                           </div> -->
+                           </div>  -->
                            </div>
                             
                            
                            <div class="form-group">
                               <label for="exampleInputEmail1">Password</label>
-                              <input type="password" name="password" id="password"  class="form-control"  placeholder="Enter Password">
+                              <input type="password" name="password" id="password"  class="form-control" formControlName="password" placeholder="Enter Password" [class.is-invalid]="passwordValidation()">
                            </div>
                            <div class="form-group">
                               <p class="text-center">By Loging In you accept our <a href="#">Terms Of Use</a></p>
