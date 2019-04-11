@@ -17,14 +17,14 @@ export class RegisterComponent implements OnInit {
   constructor(private fb:FormBuilder) { }
     RegistrationForm=this.fb.group({
       fullname:['',Validators.required],
-      username:['',Validators.required,forbiddenNameValidator],
-      password:['',Validators.required]
+      username:['',[Validators.required,forbiddenNameValidator(/password/)]],
+      password:['',[Validators.required,Validators.minLength(8)]]
     })
   ngOnInit() {
   }
   fullnameValidation()
   {
-    
+   
     if(this.RegistrationForm.get('fullname').invalid&&(this.RegistrationForm.get('fullname').touched||this.RegistrationForm.get('fullname').dirty))
     {
          return true;
