@@ -8,7 +8,7 @@
 							<h1>Login</h1>
 						 </div>
 					</div>
-                   <form [formGroup]="LoginForm">
+                   <form [formGroup]="LoginForm" (ngSubmit)="onLogin()" #myform="ngForm">
                            <div class="form-group">
                               <label for="exampleInputEmail1">Email address</label>
 
