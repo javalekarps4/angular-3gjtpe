@@ -3,6 +3,7 @@ import{RegisterComponent}from './register/register.component';
 import{PagenotfoundComponent}from'./pagenotfound/pagenotfound.component';
 import{RouterModule,Routes}from'@angular/router';
 import {WelcomeComponent}from'./welcome/welcome.component';
+import{MenuComponent}from'./menu/menu.component'
 import{NgModule}from'@angular/core';
 
 const AppRoutes:Routes=[
@@ -17,6 +18,10 @@ const AppRoutes:Routes=[
   {
     path:'welcome',
     component:WelcomeComponent
+  },
+  {
+    path:'menu',
+    component:MenuComponent
   },
   {
     path:'',
