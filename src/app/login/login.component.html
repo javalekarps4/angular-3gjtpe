@@ -15,7 +15,7 @@
                               <input type="email" name="email"  class="form-control" id="email" formControlName="email"  placeholder="Enter email"[class.is-invalid]="emailValidation()" >
                           <div [hidden]="!emailValidation()">
                               <small class="danger" *ngIf="LoginForm.get('email').errors?.required" >please enter email</small>
-                                  <small class="danger" *ngIf="LoginForm.get('password').errors?.email">please enter valid email</small>
+                                  <small class="danger" *ngIf="LoginForm.get('email').errors?.email">please enter valid email</small>
                            </div>  
                            </div>
                             
@@ -33,7 +33,7 @@
                               <p class="text-center">By Loging In you accept our <a href="#">Terms Of Use</a></p>
                            </div>
                            <div class="col-md-12 text-center ">
-                              <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Login</button>
+                              <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm"(ngSubmit)="onLogin()">Login</button>
                            </div>
                         </form>
                  
