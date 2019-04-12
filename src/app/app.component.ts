@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent  {
   name = 'Angular';
+  Tokenid=localStorage.getItem('token');
+  isTokenAvailable()
+  {
+      if(this.Tokenid)
+      return true;
+      else
+      return false;
+  }
 }
