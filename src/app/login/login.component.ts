@@ -45,5 +45,6 @@ onLogin()
 {
   console.log(JSON.stringify(this.LoginForm.value));
   alert('Login successful');
+localStorage.setItem("token","firstToken");
 }
 }
