@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import{Route}from'@angular/router';
 
 @Component({
   selector: 'my-app',
@@ -14,5 +15,9 @@ export class AppComponent  {
       return true;
       else
       return false;
+  }
+  logoutUser()
+  {
+    localStorage.removeItem("token");
   }
 }
