@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import{FormBuilder,Validators}from'@angular/forms';
+import{Router}from'@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,9 +9,13 @@ import{FormBuilder,Validators}from'@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private _formbuilder:FormBuilder) { }
+  constructor(private _formbuilder:FormBuilder,private _router:Router) { }
 
   ngOnInit() {
+    if(localStorage.getItem("token"))
+    {
+      this._router.navigate(["/welcome"])
+    }
   }
 LoginForm=this._formbuilder.group({
   email:['',[Validators.required,Validators.email]],
@@ -46,5 +51,6 @@ onLogin()
   console.log(JSON.stringify(this.LoginForm.value));
   alert('Login successful');
 localStorage.setItem("token","firstToken");
+this._router.navigate(["/welcome"]);
 }
 }
