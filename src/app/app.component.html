@@ -8,8 +8,8 @@
   <button type="button" class="btn btn-light" *ngIf="isTokenAvailable();else elseblock" (click)="logoutUser()">Logout</button>
   
   <ng-template #elseblock>
-  <button type="button" class="btn btn-light" routerLinkActive="active"><a routerLink="/login" *ngIf="isTokenAvailable">Login</a></button>
-  <button type="button" class="btn btn-light" routerLinkActive="active"><a routerLink="/register">Register</a></button>
+  <button type="button" class="btn btn-light" routerLinkActive="active"><a routerLink="/login" *ngIf="!isTokenAvailable()">Login</a></button>
+  <button type="button" class="btn btn-light" routerLinkActive="active"><a routerLink="/register" *ngIf="!isTokenAvailable()">Register</a></button>
   </ng-template>
   
   </nav>

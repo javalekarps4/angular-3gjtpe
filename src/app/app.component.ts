@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import{Route}from'@angular/router';
+import{Router}from'@angular/router';
 
 @Component({
   selector: 'my-app',
@@ -9,6 +9,7 @@ import{Route}from'@angular/router';
 export class AppComponent  {
   name = 'Angular';
   Tokenid=localStorage.getItem('token');
+  constructor(private _rote:Router){}
   isTokenAvailable()
   {
       if(this.Tokenid)
@@ -19,5 +20,7 @@ export class AppComponent  {
   logoutUser()
   {
     localStorage.removeItem("token");
+    this._rote.navigate(['/login']);
+
   }
 }
