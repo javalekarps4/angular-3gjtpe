@@ -12,9 +12,11 @@ import{ReactiveFormsModule}from'@angular/forms'
 import{AppRouterModule}from './AppRoterModule';
 import { MenuComponent } from './menu/menu.component';
 
+
 @NgModule({
   imports:      [ BrowserModule, FormsModule,AppRouterModule,ReactiveFormsModule ],
   declarations: [ AppComponent, HelloComponent, LoginComponent, RegisterComponent, PagenotfoundComponent, WelcomeComponent, MenuComponent ],
+ 
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

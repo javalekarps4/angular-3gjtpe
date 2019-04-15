@@ -5,6 +5,7 @@ import{RouterModule,Routes}from'@angular/router';
 import {WelcomeComponent}from'./welcome/welcome.component';
 import{MenuComponent}from'./menu/menu.component'
 import{NgModule}from'@angular/core';
+import {GuardGuard} from'./guard.guard';
 
 const AppRoutes:Routes=[
   {
@@ -17,7 +18,8 @@ const AppRoutes:Routes=[
   },
   {
     path:'welcome',
-    component:WelcomeComponent
+    component:WelcomeComponent,
+    canActivate:[GuardGuard]
   },
   {
     path:'menu',
