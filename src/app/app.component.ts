@@ -8,11 +8,11 @@ import{Router}from'@angular/router';
 })
 export class AppComponent  {
   name = 'Angular';
-  Tokenid=localStorage.getItem('token');
+  
   constructor(private _rote:Router){}
   isTokenAvailable()
   {
-      if(this.Tokenid)
+      if(localStorage.getItem('token'))
       return true;
       else
       return false;
