@@ -12,11 +12,12 @@ import{ReactiveFormsModule}from'@angular/forms'
 import{AppRouterModule}from './AppRoterModule';
 import { MenuComponent } from './menu/menu.component';
 import { AuthServiceService } from './auth-service.service';
+import { MaterialModuleComponent } from './material-module/material-module.component';
 
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule,AppRouterModule,ReactiveFormsModule ],
-  declarations: [ AppComponent, HelloComponent, LoginComponent, RegisterComponent, PagenotfoundComponent, WelcomeComponent, MenuComponent ],
+  declarations: [ AppComponent, HelloComponent, LoginComponent, RegisterComponent, PagenotfoundComponent, WelcomeComponent, MenuComponent, MaterialModuleComponent ],
  
   bootstrap:    [ AppComponent ],
  
