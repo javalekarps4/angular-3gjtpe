@@ -50,7 +50,7 @@ passwordValidation()
 onLogin()
 {
   console.log(JSON.stringify(this.LoginForm.value));
-firebase.auth().currentUser.
+
   
   alert('Login successful');
   

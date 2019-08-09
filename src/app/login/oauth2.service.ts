@@ -7,5 +7,15 @@ export class Oauth2Service {
   constructor(public OAuth: AngularFireAuth) { 
 
   }
+   
+   async oauthLogin(email,password)
+   {
+      try{
+        
 
+      }catch(e)
+      {
+      
+      }
+   }
 }
