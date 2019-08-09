@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import{FormBuilder,Validators}from'@angular/forms';
 import{Router}from'@angular/router';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -49,8 +50,10 @@ passwordValidation()
 onLogin()
 {
   console.log(JSON.stringify(this.LoginForm.value));
+firebase.auth().currentUser.
+  
   alert('Login successful');
-localStorage.setItem("token","firstToken");
+  
 this._router.navigate(["/welcome"]);
 }
 }

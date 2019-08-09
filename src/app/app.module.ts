@@ -12,11 +12,13 @@ import{ReactiveFormsModule}from'@angular/forms'
 import{AppRouterModule}from './AppRoterModule';
 import { MenuComponent } from './menu/menu.component';
 import { AuthServiceService } from './auth-service.service';
-
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule,AppRouterModule,ReactiveFormsModule ],
+  imports:      [ BrowserModule, FormsModule,AppRouterModule,ReactiveFormsModule,AngularFireModule,AngularFireAuthModule,AngularFirestoreModule ],
   declarations: [ AppComponent, HelloComponent, LoginComponent, RegisterComponent, PagenotfoundComponent, WelcomeComponent, MenuComponent ],
  
   bootstrap:    [ AppComponent ],
