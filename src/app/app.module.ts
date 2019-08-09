@@ -15,6 +15,7 @@ import { AuthServiceService } from './auth-service.service';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { Oauth2Service } from './login/oauth2.service';
 
 
 @NgModule({
@@ -23,6 +24,6 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
  
   bootstrap:    [ AppComponent ],
  
-  providers: [AuthServiceService]
+  providers: [AuthServiceService, Oauth2Service]
 })
 export class AppModule { }
