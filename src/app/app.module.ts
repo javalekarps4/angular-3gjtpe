@@ -11,7 +11,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import{ReactiveFormsModule}from'@angular/forms'
 import{AppRouterModule}from './AppRoterModule';
 import { MenuComponent } from './menu/menu.component';
-import { AuthServiceService } from './auth-service.service';
+import { AuthServiceService } from './auth.service';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
