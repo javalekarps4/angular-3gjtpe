@@ -1,6 +1,8 @@
-<div class="span3 well">
+
+
+ <div class="span3 well">
       <legend>New to WebApp? Sign up!</legend>
-      <!-- {{RegistrationForm.value|json}} -->
+       {{RegistrationForm.value|json}} 
     <form [formGroup]="RegistrationForm">
       <div class="formgroup">
         <label for="fullname">full name</label>
@@ -31,4 +33,4 @@
        
         <button class="btn btn-warning" id="submit" type="submit"(ngSubmit)="onSubmit()">Sign up for WebApp</button>
     </form>
-</div>
+</div> 
