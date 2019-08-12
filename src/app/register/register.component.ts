@@ -6,7 +6,8 @@ import{Oauth2Service} from '../login/oauth2.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
+  providers:[Oauth2Service]
 })
 export class RegisterComponent implements OnInit {
   // RegistrationForm=new FormGroup({
