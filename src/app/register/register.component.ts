@@ -7,7 +7,7 @@ import{Oauth2Service} from '../login/oauth2.service';
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
-  providers:[Oauth2Service]
+  //providers:[Oauth2Service]
 })
 export class RegisterComponent implements OnInit {
   // RegistrationForm=new FormGroup({
@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
   //   password:new FormControl('')
   // });
 
-  constructor(private fb:FormBuilder,private oauth:Oauth2Service) { }
+  constructor(private fb:FormBuilder) { }
     RegistrationForm=this.fb.group({
       fullname:['',Validators.required],
       username:['',[Validators.required,Validators.email(this.RegistrationForm.get('username'))]],
