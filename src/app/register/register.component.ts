@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import{FormBuilder,Validators}from'@angular/forms';
 import{forbiddenNameValidator}from'../shared/customvalidators';
+import{Oauth2Service} from '../login/oauth2.service';
 
 @Component({
   selector: 'app-register',
@@ -14,10 +15,10 @@ export class RegisterComponent implements OnInit {
   //   password:new FormControl('')
   // });
 
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder,private oauth:Oauth2Service) { }
     RegistrationForm=this.fb.group({
       fullname:['',Validators.required],
-      username:['',[Validators.required,forbiddenNameValidator(/password/)]],
+      username:['',[Validators.required,Validators.email(this.RegistrationForm.get('username'))]],
       password:['',[Validators.required,Validators.minLength(8)]]
     })
   ngOnInit() {
@@ -68,7 +69,11 @@ export class RegisterComponent implements OnInit {
 
   onSubmit()
   {
+    let obj={email:this.username(),password:this.password()};
+     this.oauth.oauthRegister(obj).then(res=>{console.log(res)
+      alert("account created successfully")});
     console.log(JSON.stringify(this.RegistrationForm.value));
+
   }
 
 }
