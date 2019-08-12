@@ -70,9 +70,10 @@ export class RegisterComponent implements OnInit {
   onSubmit()
   {
     let obj={email:this.username(),password:this.password()};
+  
      this.oauth.oauthRegister(obj).then(res=>{console.log(res)
       alert("account created successfully")});
-    console.log(JSON.stringify(this.RegistrationForm.value));
+    
 
   }
 
