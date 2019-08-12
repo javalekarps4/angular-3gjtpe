@@ -8,14 +8,8 @@ export class Oauth2Service {
 
   }
    
-   async oauthLogin(email,password)
+    oauthRegister(value)
    {
-      try{
-        
-
-      }catch(e)
-      {
       
-      }
    }
 }
