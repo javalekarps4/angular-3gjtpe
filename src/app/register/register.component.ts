@@ -72,7 +72,8 @@ export class RegisterComponent implements OnInit {
     let obj={email:this.username(),password:this.password()};
   
      this.oauth.oauthRegister(obj).then(res=>{console.log(res)
-      alert("account created successfully")});
+      alert("account created successfully")},err=>{console.log(err)
+      alert("something went wrong please try again")});
     
 
   }
