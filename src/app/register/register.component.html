@@ -9,7 +9,7 @@
         	<input [class.is-invalid]="fullnameValidation()" formControlName="fullname" class="span3 form-control" id="fullname" name="name"  type="text" >
           
          <div [hidden]="!fullnameValidation()">
-           <small class="danger" *ngIf="fullname.errors?.required">enter full name</small>
+           <small class="danger" *ngIf="RegistrationForm.get('fullname').errors?.required">enter full name</small>
             
          </div>
       </div>
@@ -17,8 +17,8 @@
         <label for="username">User name</label>
          <input class="span3 form-control" [class.is-invalid]="usernameValidation()"formControlName="username" id="username" name="username"  type="text" minLength="8">
           <div [hidden]="!usernameValidation()">
-           <small class="danger"  *ngIf="username.errors?.required">enter user name</small>
-           <small class="danger" *ngIf="username.errors?.forbiddenName">It is not allow</small> 
+           <small class="danger"  *ngIf="RegistrationForm.get('username').errors?.required">enter user name</small>
+           <small class="danger" *ngIf="RegistrationForm.get('username').errors?.email">Enter valid email</small> 
          </div>
       </div>
       <div class="formgroup">

@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
   constructor(private fb:FormBuilder) { }
     RegistrationForm=this.fb.group({
       fullname:['',Validators.required],
-      username:['',[Validators.required]],
+      username:['',[Validators.required,Validators.email]],
       password:['',[Validators.required,Validators.minLength(8)]]
     })
   ngOnInit() {
@@ -70,6 +70,7 @@ export class RegisterComponent implements OnInit {
 
   onSubmit()
   {
+    console.log("submitted")
 
     //let obj={email:this.username(),password:this.password()};
   
