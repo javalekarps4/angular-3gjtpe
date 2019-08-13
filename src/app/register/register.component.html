@@ -10,7 +10,6 @@
           
          <div [hidden]="!fullnameValidation()">
            <small class="danger" *ngIf="RegistrationForm.get('fullname').errors?.required">enter full name</small>
-            
          </div>
       </div>
       <div class="formgroup">
@@ -29,8 +28,6 @@
            <small class="danger" *ngIf="RegistrationForm.get('password').errors?.minlength">Minimum password length must be 8</small>
          </div>
       </div>
-	
-       
-        <button class="btn btn-warning" id="submit" type="submit"(ngSubmit)="onSubmit()">Sign up for WebApp</button>
+        <button class="btn btn-success" id="submit" type="submit" (ngSubmit)="onSubmit()">Sign up for WebApp</button>
     </form>
 </div> 

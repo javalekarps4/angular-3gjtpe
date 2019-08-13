@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import{FormBuilder,Validators}from'@angular/forms';
 import{forbiddenNameValidator}from'../shared/customvalidators';
-import{Oauth2Service} from '../login/oauth2.service';
+
 
 @Component({
   selector: 'app-register',
@@ -80,5 +80,6 @@ export class RegisterComponent implements OnInit {
     
 
   }
+  
 
 }
