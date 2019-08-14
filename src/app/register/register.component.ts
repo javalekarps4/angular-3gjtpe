@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
   constructor(private fb:FormBuilder) { }
     RegistrationForm=this.fb.group({
       fullname:['',Validators.required],
-      username:['',[Validators.required,Validators.email]],
+      email:['',[Validators.required,Validators.email]],
       password:['',[Validators.required,Validators.minLength(8)]]
     })
   ngOnInit() {
@@ -36,7 +36,7 @@ export class RegisterComponent implements OnInit {
   }
   usernameValidation()
   {
-    if(this.RegistrationForm.get('username').invalid&&(this.RegistrationForm.get('username').touched||this.RegistrationForm.get('username').dirty))
+    if(this.RegistrationForm.get('email').invalid&&(this.RegistrationForm.get('email').touched||this.RegistrationForm.get('email').dirty))
     {
          return true;
     }
@@ -58,9 +58,9 @@ export class RegisterComponent implements OnInit {
    {
     return this.RegistrationForm.get('fullname');
    }
-   username()
+   email()
    {
-    return this.RegistrationForm.get('username');
+    return this.RegistrationForm.get('email');
    }
    password()
    {

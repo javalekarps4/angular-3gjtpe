@@ -13,11 +13,11 @@
          </div>
       </div>
       <div class="formgroup">
-        <label for="username">User name</label>
-         <input class="span3 form-control" [class.is-invalid]="usernameValidation()"formControlName="username" id="username" name="username"  type="text" minLength="8">
+        <label for="username">Email</label>
+         <input class="span3 form-control" [class.is-invalid]="usernameValidation()"formControlName="email" id="username" name="email"  type="text" minLength="8">
           <div [hidden]="!usernameValidation()">
-           <small class="danger"  *ngIf="RegistrationForm.get('username').errors?.required">enter user name</small>
-           <small class="danger" *ngIf="RegistrationForm.get('username').errors?.email">Enter valid email</small> 
+           <small class="danger"  *ngIf="RegistrationForm.get('email').errors?.required">enter user name</small>
+           <small class="danger" *ngIf="RegistrationForm.get('email').errors?.email">Enter valid email</small> 
          </div>
       </div>
       <div class="formgroup">
