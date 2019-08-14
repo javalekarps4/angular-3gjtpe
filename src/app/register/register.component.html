@@ -3,10 +3,10 @@
  <div class="span3 well">
       <legend>New to WebApp? Sign up!</legend>
        {{RegistrationForm.value|json}} 
-    <form [formGroup]="RegistrationForm">
+    <form [formGroup]="RegistrationForm" (ngSubmit)="onSubmit()">
       <div class="formgroup">
         <label for="fullname">full name</label>
-        	<input [class.is-invalid]="fullnameValidation()" formControlName="fullname" class="span3 form-control" id="fullname" name="name"  type="text" >
+        	<input [class.is-invalid]="fullnameValidation()" formControlName="fullname" class="span3 form-control" id="fullname"   type="text" >
           
          <div [hidden]="!fullnameValidation()">
            <small class="danger" *ngIf="RegistrationForm.get('fullname').errors?.required">enter full name</small>
@@ -14,7 +14,7 @@
       </div>
       <div class="formgroup">
         <label for="username">Email</label>
-         <input class="span3 form-control" [class.is-invalid]="usernameValidation()"formControlName="email" id="username" name="email"  type="text" minLength="8">
+         <input class="span3 form-control" [class.is-invalid]="usernameValidation()" formControlName="email" id="username"   type="text" minLength="8">
           <div [hidden]="!usernameValidation()">
            <small class="danger"  *ngIf="RegistrationForm.get('email').errors?.required">enter user name</small>
            <small class="danger" *ngIf="RegistrationForm.get('email').errors?.email">Enter valid email</small> 
@@ -22,7 +22,7 @@
       </div>
       <div class="formgroup">
         <label for="password">Password</label>
-          <input class="span3 form-control" formControlName="password" id="password" name="password" type="password" [class.is-invalid]="passwordValidation()"> 
+          <input class="span3 form-control" formControlName="password" id="password"  type="password" [class.is-invalid]="passwordValidation()"> 
            <div [hidden]="!passwordValidation()">
            <small class="danger" *ngIf="RegistrationForm.get('password').errors?.required">enter password</small>
            <small class="danger" *ngIf="RegistrationForm.get('password').errors?.minlength">Minimum password length must be 8</small>

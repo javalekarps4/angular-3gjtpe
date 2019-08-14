@@ -48,24 +48,12 @@ export class RegisterComponent implements OnInit {
     if(this.RegistrationForm.get('password').invalid&&(this.RegistrationForm.get('password').touched||this.RegistrationForm.get('password').dirty))
     {
          return true;
-    }
-    
+    }  
     else
     return false;
   }
 
-   fullname()
-   {
-    return this.RegistrationForm.get('fullname');
-   }
-   email()
-   {
-    return this.RegistrationForm.get('email');
-   }
-   password()
-   {
-    return this.RegistrationForm.get('password');
-   }
+  
 
 
   onSubmit()
